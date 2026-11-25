@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enes Kır – Otonom Sistemler Teknikeri Adayı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#eef3fa;--surface:#e1eaf6;--ink:#12294d;--muted:#46618c;--line:#9db6d8;--accent:#b36a00;--accent-ink:#fff;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13294b;--surface:#1a345c;--ink:#e8f0fb;--muted:#a9bddc;--line:#4b6b9e;--accent:#f2b84b;--accent-ink:#13294b}}
+:root[data-theme="dark"]{--bg:#13294b;--surface:#1a345c;--ink:#e8f0fb;--muted:#a9bddc;--line:#4b6b9e;--accent:#f2b84b;--accent-ink:#13294b}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;background:var(--bg);opacity:.9;z-index:-1}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;gap:1.5rem;justify-content:space-between;align-items:center;padding:1.25rem 0;flex-wrap:wrap}
+nav b{font:800 1.1rem var(--display)}
+nav div{display:flex;gap:1.25rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center;padding:3rem 0 4.5rem}
+h1{font:900 clamp(3.4rem,10vw,6.8rem)/.9 var(--display);letter-spacing:-.03em;margin:0 0 1.25rem}
+.role{font:500 1.25rem/1.4 var(--display);color:var(--muted);margin:0 0 1.75rem;max-width:30ch}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.4rem;border:2px solid var(--ink);font-weight:600;text-decoration:none;border-radius:2px}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.radar{width:100%;max-width:400px;justify-self:center;color:var(--ink)}
+.radar .ring{fill:none;stroke:var(--line);stroke-width:1.5}
+.radar .sweep{transform-origin:200px 200px;animation:spin 6s linear infinite}
+.radar .blip{fill:var(--accent);animation:ping 6s linear infinite}
+.radar text{font:600 11px var(--body);fill:var(--muted)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ping{0%{opacity:1}60%,100%{opacity:.1}}
+section{padding:3.5rem 0;border-top:2px solid var(--ink)}
+h2{font:800 clamp(1.9rem,4vw,2.6rem)/1.1 var(--display);margin:0 0 1.5rem;letter-spacing:-.01em}
+h3{font:800 1.25rem/1.2 var(--display);margin:0 0 .6rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.about p{margin:0 0 1rem;max-width:60ch}
+.facts{list-style:none;margin:0;padding:0;border:2px solid var(--ink);background:var(--surface)}
+.facts li{padding:1rem 1.25rem;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts small{display:block;color:var(--muted);font-size:.85rem}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.skill{border:2px solid var(--ink);padding:1.4rem;background:var(--surface)}
+.skill ul{margin:0;padding-left:1.1rem}
+.skill li{margin:.25rem 0}
+.skill h3{border-bottom:3px solid var(--accent);display:inline-block;padding-bottom:.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+.chips span{border:1px solid var(--line);padding:.25rem .7rem;font-size:.92rem;background:var(--bg)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.proj{border:2px solid var(--ink);padding:1.4rem;background:var(--surface)}
+.proj .tag{display:inline-block;background:var(--ink);color:var(--bg);font-size:.85rem;font-weight:600;padding:.1rem .6rem;margin-bottom:.9rem}
+.proj p{margin:0;color:var(--muted)}
+.contact{display:grid;gap:.75rem}
+.contact a{font:800 clamp(1.3rem,3.5vw,2rem) var(--display);overflow-wrap:anywhere;text-decoration-thickness:3px;text-decoration-color:var(--accent);text-underline-offset:6px}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+@media (max-width:820px){
+  .hero,.about,.skills,.projects{grid-template-columns:1fr}
+  .radar{max-width:280px;order:-1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.radar .sweep,.radar .blip{animation:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Ana menü">
+    <b>Enes Kır</b>
+    <div><a href="#hakkimda">Hakkımda</a><a href="#beceriler">Beceriler</a><a href="#projeler">Projeler</a><a href="#iletisim">İletişim</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Enes Kır</h1>
+      <p class="role">Otonom Sistemler Teknikeri Adayı. Elektronik, yazılım ve mekanik tasarımı birleştiriyorum.</p>
+      <div class="btns">
+        <a class="btn main" href="#projeler">Projelerimi gör</a>
+        <a class="btn" href="#iletisim">İletişime geç</a>
+      </div>
+    </div>
+    <svg class="radar" viewBox="0 0 400 400" role="img" aria-label="Dönen radar animasyonu">
+      <circle class="ring" cx="200" cy="200" r="190"/><circle class="ring" cx="200" cy="200" r="130"/><circle class="ring" cx="200" cy="200" r="70"/>
+      <line class="ring" x1="10" y1="200" x2="390" y2="200"/><line class="ring" x1="200" y1="10" x2="200" y2="390"/>
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--accent)" stop-opacity="0"/><stop offset="1" stop-color="var(--accent)" stop-opacity=".55"/></linearGradient></defs>
+      <g class="sweep">
+        <path d="M200 200 L200 10 A190 190 0 0 1 335 65 Z" fill="url(#g)" transform="rotate(-45 200 200)"/>
+        <line x1="200" y1="200" x2="335" y2="65" stroke="var(--accent)" stroke-width="3" transform="rotate(-45 200 200) rotate(45 200 200)"/>
+      </g>
+      <circle class="blip" cx="290" cy="120" r="6" style="animation-delay:-4.6s"/>
+      <circle class="blip" cx="130" cy="260" r="6" style="animation-delay:-1.2s"/>
+      <circle class="blip" cx="250" cy="310" r="6" style="animation-delay:-2.8s"/>
+      <text x="206" y="196">0°</text><text x="332" y="216">90°</text>
+    </svg>
+  </header>
+
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <div class="about">
+      <div>
+        <p>Merhaba, ben Enes. 19 yaşındayım ve Mehmet Akif Ersoy Üniversitesi’nde Otonom Sistemler Teknikerliği okuyorum. Makine elemanları, SolidWorks 3D, elektronik devre tasarımı ve C# ile masaüstü arayüz programlama konularında kendimi geliştiriyorum.</p>
+        <p>Mustafakemalpaşa’da edindiğim işletmecilik tecrübesi bana kriz yönetimi, sorumluluk bilinci ve donanım sorunlarını hızlı çözme becerisi kazandırdı.</p>
+        <p>Öğrendiklerimi disiplinli bir takım çalışmasında gerçek projelere dönüştürebileceğim bir staj arıyorum.</p>
+      </div>
+      <ul class="facts">
+        <li><small>Eğitim</small>MAKÜ, Otonom Sistemler Teknikerliği</li>
+        <li><small>Hedef</small>2027 DGS ile mühendislik fakültesine geçiş</li>
+        <li><small>Aradığım fırsat</small>Staj</li>
+        <li><small>Konum</small>Mustafakemalpaşa, Bursa</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="beceriler">
+    <h2>Beceriler</h2>
+    <div class="skills">
+      <div class="skill"><h3>Gömülü sistem ve masaüstü yazılım</h3><ul>
+        <li>Arduino (C++) ile I2C LCD, RFID, LED matris kontrolü</li>
+        <li>İki mikrodenetleyici arası UART seri haberleşme</li>
+        <li>C# Windows Forms ile donanım kontrolü</li>
+        <li>double.TryParse, Dictionary, ListBox ile arayüz tasarımı</li></ul></div>
+      <div class="skill"><h3>Mekanik tasarım ve imalat</h3><ul>
+        <li>Autodesk ve SolidWorks ile teknik çizim</li>
+        <li>3D modelleme ve katı model tasarımı</li>
+        <li>CNC frezeleme ve torna operasyonları</li>
+        <li>CAD/CAM</li></ul></div>
+    </div>
+    <div class="chips" aria-label="Aldığım dersler">
+      <span>Nesne Tabanlı Programlama I</span><span>Yapay Zeka Uygulamaları</span><span>Mobil Programlama</span>
+      <span>Mikrodenetleyiciler ve Sayısal Elektronik</span><span>Güç Elektroniği ve Elektrik Makineleri</span>
+      <span>Robotik Sistemler ve Makine Elemanları</span><span>CNC Teknolojisi, Hidrolik ve Pnömatik</span>
+    </div>
+  </section>
+
+  <section id="projeler">
+    <h2>Projelerim</h2>
+    <div class="projects">
+      <article class="proj"><span class="tag">TEKNOFEST</span><h3>Akıllı Tarım İzleme Sistemi</h3><p>TEKNOFEST için geliştirdiğim tarım izleme projesi.</p></article>
+      <article class="proj"><span class="tag">Arduino</span><h3>Spotify Dot Matrix</h3><p>LED matris kontrolü üzerine kurulu bir Arduino projesi.</p></article>
+      <article class="proj"><span class="tag">Arduino</span><h3>Servo Radar</h3><p>Servo motor ile çalışan Arduino radar projesi.</p></article>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <div class="contact">
+      <a href="mailto:eneskiroglu16@gmail.com">eneskiroglu16@gmail.com</a>
+      <a href="tel:+905431138486">0543 113 84 86</a>
+    </div>
+  </section>
+
+  <footer>© Enes Kır</footer>
+</div>
+</body>
+</html>
